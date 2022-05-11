@@ -5,21 +5,74 @@ import java.util.Scanner;
 
 public class battle {
 
+    public static void chooseEnemy(Enemy1) {
+        System.out.println("Who do you want to attack?");
+        Scanner scan = new Scanner(System.in);
+        int monsterChoice = scan.nextInt();
+
+        switch(monsterChoice) {
+                case 1 :
+                    return Enemies.enemy1;
+                default :
+                    System.out.println("Please, make an effort and choose a monster to hit");
+        }
+    }
+
+    public static void chooseEnemy(Enemy1, Enemy2) {
+        System.out.println("Who do you want to attack?");
+        Scanner scan = new Scanner(System.in);
+        int monsterChoice = scan.nextInt();
+
+        switch(monsterChoice) {
+                case 1 :
+                    return Enemies.enemy1;
+                case 2 :
+                    return Enemies.enemy2;
+                                           
+                default :
+                    System.out.println("Please, make an effort and choose a monster to hit");
+        }
+    }
+    
+    public static void chooseEnemy(Enemy1, Enemy2, Enemy3) {
+        System.out.println("Who do you want to attack?");
+        Scanner scan = new Scanner(System.in);
+        int monsterChoice = scan.nextInt();
+
+        switch(monsterChoice) {
+                case 1 :
+                    return Enemies.enemy1;
+                case 2 :
+                    return Enemies.enemy2;
+                case 3:
+                    return Enemies.enemy3;
+                                           
+                default :
+                    System.out.println("Please, make an effort and choose a monster to hit");
+        }
+    }
+
+    
+    
+
     public static void fight(Hero player, Monster enemy){
         System.out.println("The great " + enemy.getName() + " appears before you, screeching, howling");
+        Scanner scan = new Scanner(System.in);  
+
+        
 
         do {
             for (int i = 0 ; i == 0; ) {
-                Scanner scan = new Scanner(System.in);
                 System.out.println("What will you do?");
                 System.out.print("1 - fight   | 2 - flee  : ");
                 try{
 
                     int choice = scan.nextInt();
 
+
                     switch (choice) {
                         case 1:
-                            enemy.takeHit(player.attack());
+                            chooseEnemy();
                             i++;
                             break;
 
@@ -44,4 +97,7 @@ public class battle {
         while (player.getHp() > 0 && enemy.getHp() > 0) ;
     }
 
+    
+
 }
+

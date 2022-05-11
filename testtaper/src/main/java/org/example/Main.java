@@ -21,3 +21,4 @@ public class Main {
     fight(player, enemy);
     }
 }
+
