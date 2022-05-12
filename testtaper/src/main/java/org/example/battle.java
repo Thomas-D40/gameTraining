@@ -1,11 +1,12 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class battle {
 
-    public static void chooseEnemy(Enemy1) {
+    public static void chooseEnemy(int 1) {
         System.out.println("Who do you want to attack?");
         Scanner scan = new Scanner(System.in);
         int monsterChoice = scan.nextInt();
@@ -18,7 +19,7 @@ public class battle {
         }
     }
 
-    public static void chooseEnemy(Enemy1, Enemy2) {
+    public static void chooseEnemy(2) {
         System.out.println("Who do you want to attack?");
         Scanner scan = new Scanner(System.in);
         int monsterChoice = scan.nextInt();
@@ -34,7 +35,7 @@ public class battle {
         }
     }
     
-    public static void chooseEnemy(Enemy1, Enemy2, Enemy3) {
+    public static void chooseEnemy(3) {
         System.out.println("Who do you want to attack?");
         Scanner scan = new Scanner(System.in);
         int monsterChoice = scan.nextInt();
@@ -55,8 +56,11 @@ public class battle {
     
     
 
-    public static void fight(Hero player, Monster enemy){
-        System.out.println("The great " + enemy.getName() + " appears before you, screeching, howling");
+    public static void fight(Hero player, ArrayList<Monster> enemies){
+        for (int i = 1; i <= enemies.size(); i++) {
+        System.out.println("The great " + enemies.get(i).getName() + " appears before you, screeching, howling");
+        }
+
         Scanner scan = new Scanner(System.in);  
 
         
